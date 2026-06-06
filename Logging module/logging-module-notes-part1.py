@@ -15,6 +15,7 @@
 #following is the code to demonstrate the logging levels: 
 # to show that if we do not define logging.basicConfig(level=logging.DEBUG), to set the logging level to DEBUG,
 # then only WARNING, ERROR and CRITICAL messages will be logged by default.
+
 import logging
 class demologging:
     def add_numbers(self, a, b):
@@ -30,3 +31,8 @@ logging.info("sum and Product: {} {}".format(sum_result, product_result))
 logging.warning("sum and Product: {} {}".format(sum_result, product_result))
 logging.error("sum and Product: {} {}".format(sum_result, product_result))
 logging.critical("sum and Product: {} {}".format(sum_result, product_result))
+
+#output:
+#WARNING:root:sum and Product: 8 15 
+#ERROR:root:sum and Product: 8 15
+#CRITICAL:root:sum and Product: 8 15
