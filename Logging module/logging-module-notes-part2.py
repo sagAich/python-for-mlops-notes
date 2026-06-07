@@ -1,8 +1,10 @@
 #This code is to show that how we can create the logs inside a file.
 import logging
 
-logging.basicConfig(filename="app.log", level=logging.DEBUG, filemode='w') # by keeping filemode='w', 
+logging.basicConfig( filename="app.log", level=logging.DEBUG, filemode='w') # by keeping filemode='w', 
 # we can overwrite the existing log file, if we do not use it, then the logs will be appended to the existing log file.
+# now if i were to create a separate directory for the logs, outside the current directory,
+# then we can specify the path of the log file as well, for example: filename="..\\logs\\app.log"
 
 class demologging:
     def add_numbers(self, a, b):
