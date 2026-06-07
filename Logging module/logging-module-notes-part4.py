@@ -11,7 +11,7 @@ class loggerDemo:
     def sample_logger(self):
         # First step is to create a logger object, we can create a logger object using logging.getLogger() method.
         logger = logging.getLogger(__name__) 
-        # __name__ is a variable that holds the name of the current module, when class is imported in another module, 
+        # __name__ is a variable that holds the name of the current module. When class is imported in another module, 
         # then __name__ will hold the name of the module that is "loggerDemo", where it is imported, and when it is executed as a standalone script or run directly, 
         # then __name__ will hold the value "__main__".
 
@@ -21,18 +21,20 @@ class loggerDemo:
         #  ├── app1.py 
         #  ├── loggerDemo.py 
         #  └── database.py
-        # if i remove 
+        # if i remove the last two lines of the code in loggerDemo.py file, which are:
         # ld = loggerDemo() 
-        # ld.sample_logger() from loggerDemo.py and add it to app1.py and database.py, 
+        # ld.sample_logger() 
+        # from loggerDemo.py and we write these lines inside app1.py and database.py, 
         # then when i execute app1.py and database.py, then the value of __name__ will be "loggerDemo",
         # and if i execute loggerDemo.py directly, then the value of __name__ will be "__main__".
         # But in this case no logs will be created for LoggerDemo.py file as i have removed the last two lines of the code.
         # ld = loggerDemo() 
         # ld.sample_logger()
-        #  Thus also to run the loggerDemo.py file as standalone script.
+        # which are responsible to create an object of the loggerDemo class and call the sample_logger() method.
+        # Thus also to run the loggerDemo.py file as standalone script.
         # we have to write "if __name__ == "__main__":" prior to the last two lines of the code, 
         # and then we can execute the loggerDemo.py file directly as well.
-        
+
         # next step is to set the logging level for the logger object, we can set the logging level using logger.setLevel() method.
         logger.setLevel(logging.DEBUG) # we can set the logging level to DEBUG, INFO, WARNING, ERROR, CRITICAL.
         # next step is to create a handler object.
