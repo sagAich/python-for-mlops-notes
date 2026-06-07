@@ -33,6 +33,7 @@ logging.error("sum and Product: {} {}".format(sum_result, product_result))
 logging.critical("sum and Product: {} {}".format(sum_result, product_result))
 
 #output:
+
 #WARNING:root:sum and Product: 8 15 
 #ERROR:root:sum and Product: 8 15
 #CRITICAL:root:sum and Product: 8 15
