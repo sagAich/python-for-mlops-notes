@@ -1,0 +1,5 @@
+DEBUG:root:sum and Product: 8 15
+INFO:root:sum and Product: 8 15
+WARNING:root:sum and Product: 8 15
+ERROR:root:sum and Product: 8 15
+CRITICAL:root:sum and Product: 8 15
