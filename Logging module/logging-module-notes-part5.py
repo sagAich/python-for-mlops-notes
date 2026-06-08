@@ -51,5 +51,51 @@ class rotatingFileHandlerDemo:
             handler.close()
             logger.removeHandler(handler)
         # especially when applications shut down.
-rfhd = rotatingFileHandlerDemo()
-rfhd.sample_rotating_file_handler()
+        # before cleanup:
+        # Logger(__main__)
+        # │
+        # ├── RotatingFileHandler
+        # └── TimedRotatingFileHandler
+        # After cleanup: logger has no handlers
+        # Logger(__main__)
+        # │
+        # └── No handlers
+        # Now imagine a scenario for the following code:
+        # logger.addHandler(rotating_handler)
+        # logger.addHandler(timed_handler)
+        # raise Exception("Something broke!")
+        # for handler in list(logger.handlers):
+        # handler.close()
+        # logger.removeHandler(handler)
+        # The exception occurs before cleanup.
+        # So the handlers stay attached.
+        # Logger now looks like:
+        # Logger(__main__)
+        # │
+        # ├── RotatingFileHandler
+        # └── TimedRotatingFileHandler
+        # Next Call Now you run:
+        # rfhd.sample_rotating_file_handler()
+        # Now logger contains:
+        # Logger(__main__)
+        # │
+        # ├── RotatingFileHandler   (old)
+        # ├── TimedRotatingFileHandler (old)
+        # ├── RotatingFileHandler   (new)
+        # └── TimedRotatingFileHandler (new)
+        # A production-grade version would use:
+        # try:
+        #     logger.debug("debug log statement")
+        #     logger.info("info log statement")
+        #     logger.warning("warning log statement")
+        #     logger.error("error log statement")
+        #     logger.critical("critical log statement")
+        # finally:
+        #     for handler in list(logger.handlers):
+        #         handler.close()
+        #         logger.removeHandler(handler)
+
+
+if __name__ == "__main__":
+    rfhd = rotatingFileHandlerDemo()
+    rfhd.sample_rotating_file_handler()
