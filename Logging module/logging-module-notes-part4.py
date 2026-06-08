@@ -11,8 +11,8 @@ class loggerDemo:
     def sample_logger(self):
         # First step is to create a logger object, we can create a logger object using logging.getLogger() method.
         logger = logging.getLogger(__name__) 
-        # __name__ is a variable that holds the name of the current module. When class is imported in another module, 
-        # then __name__ will hold the name of the module that is "loggerDemo", where it is imported, and when it is executed as a standalone script or run directly, 
+        # __name__ is a variable that holds the name of the current module. When class loggerDemo is imported in another module, 
+        # then __name__ will hold the name of the class that is "loggerDemo" and when it is executed as a standalone script or run directly, 
         # then __name__ will hold the value "__main__".
 
         # suppose inside my project i have
@@ -24,7 +24,7 @@ class loggerDemo:
         # if i remove the last two lines of the code in loggerDemo.py file, which are:
         # ld = loggerDemo() 
         # ld.sample_logger() 
-        # from loggerDemo.py and we write these lines inside app1.py and database.py, 
+        # And we write these lines inside app1.py and database.py, 
         # then when i execute app1.py and database.py, then the value of __name__ will be "loggerDemo",
         # and if i execute loggerDemo.py directly, then the value of __name__ will be "__main__".
         # But in this case no logs will be created for LoggerDemo.py file as i have removed the last two lines of the code.

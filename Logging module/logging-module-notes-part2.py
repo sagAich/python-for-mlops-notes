@@ -4,7 +4,8 @@ import logging
 logging.basicConfig( filename="app.log", level=logging.DEBUG, filemode='w') # by keeping filemode='w', 
 # we can overwrite the existing log file, if we do not use it, then the logs will be appended to the existing log file.
 # now if i were to create a separate directory for the logs, outside the current directory,
-# then we can specify the path of the log file as well, for example: filename="..\\logs\\app.log"
+# then we can specify the path of the log file as well, for example: filename="..\\logs\\app.log",
+# here logs is an external directory created outside Logging module directory
 
 class demologging:
     def add_numbers(self, a, b):
