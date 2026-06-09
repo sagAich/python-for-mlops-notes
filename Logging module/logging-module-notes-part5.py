@@ -43,6 +43,41 @@ class rotatingFileHandlerDemo:
         # empty time_based.log for the new day. It preserves your history and will keep up to
         # 5 days of history because of backupCount=5. On the 6th night, the oldest file is deleted.
 
+        # Day 1:  time_based.log                  ← active file
+
+        # Day 2:  time_based.log                  ← new active file. here the logs for day 2026-06-10 will be stored.
+        # time_based.log.2026-06-09               ← Day 1 renamed
+
+        # Day 3:  time_based.log                  ← new active file
+        # time_based.log.2026-06-10               ← Day 2 renamed
+        # time_based.log.2026-06-09               ← Day 1
+
+        # Day 4:  time_based.log                  ← new active file
+        # time_based.log.2026-06-11               ← Day 3 renamed
+        # time_based.log.2026-06-10               ← Day 2
+        # time_based.log.2026-06-09               ← Day 1
+ 
+        # Day 5:  time_based.log                  ← new active file
+        # time_based.log.2026-06-12               ← Day 4 renamed
+        # time_based.log.2026-06-11               ← Day 3
+        # time_based.log.2026-06-10               ← Day 2
+        # time_based.log.2026-06-09               ← Day 1
+ 
+        # Day 6:  time_based.log                  ← new active file
+        # time_based.log.2026-06-13               ← Day 5 renamed
+        # time_based.log.2026-06-12               ← Day 4
+        # time_based.log.2026-06-11               ← Day 3
+        # time_based.log.2026-06-10               ← Day 2
+        # time_based.log.2026-06-09               ← Day 1  ← DELETED on Day 7
+
+        # Day 7:  time_based.log                  ← new active file
+        # time_based.log.2026-06-15               ← Day 6
+        # time_based.log.2026-06-14               ← Day 5
+        # time_based.log.2026-06-13               ← Day 4
+        # time_based.log.2026-06-12               ← Day 3
+        # time_based.log.2026-06-11               ← Day 2  ← DELETED on Day 8
+
+
         # If the size of the log file exceeds 1 MB, the log file will be rotated and
         # a new log file will be created with the names size_based.log.1, size_based.log.2, etc.
 
