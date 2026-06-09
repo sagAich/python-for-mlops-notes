@@ -15,7 +15,7 @@ class rotatingFileHandlerDemo:
         # maxBytes=1024*1024 means 1 MB, backupCount=5 means keep 5 backup files
         # creating a timed rotating file handler object
         timed_handler = TimedRotatingFileHandler("time_based.log", when="midnight", interval=1, backupCount=5)
-        # when="midnight" means the handler will roll over and start writing logs to a new log file at exactly 12:00 AM (00:00), i
+        # when="midnight" means the handler will roll over and start writing logs to a new log file at exactly 12:00 AM (00:00),
         # interval=1 means rotate every day, backupCount=5 means keep 5 backup files.
         # creating a formatter object
         formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
