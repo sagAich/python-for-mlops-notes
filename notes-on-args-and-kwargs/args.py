@@ -1,4 +1,5 @@
-#variable length arguments
+#there are two kinds of arguments: positional arguments(where no. of arguments are specified) and variable length arguments
+# variable length arguments are of two types: *args and **kwargs.
 # *args:
 # 1. when you do not know the exact number of arguments that will be passed to a function.
 # 2. when you want to pass a list or a tuple as an argument to a function. Inside the function, args will still be a tuple,
