@@ -10,3 +10,9 @@ def sum_num(*args):
         total += num
     return total
 print(sum_num(1, 2, 3, 4, 5))
+
+# to join all the words and make a sentence by adding space between them, we can use the join() method of string class.
+def make_sentence(*words):
+    sentence = " ".join(words)
+    return sentence
+print(make_sentence("Hello", "world!", "How", "are", "you?"))
